@@ -1,5 +1,11 @@
-# use the default working directory, you can change it to some other directory
-setwd("./")
+# you can pass in the working directory using the first command line argument, 
+# or the script will use the default one
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) > 0) {
+  setwd(args[1])
+} else {
+  setwd("./")
+}
 
 ################
 # Getting Data
