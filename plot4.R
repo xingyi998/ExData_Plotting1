@@ -52,12 +52,16 @@ df <- df[,!(names(df) %in% c("Date","Time"))]
 
 png(filename = "plot4.png", width = 480, height = 480, bg="transparent")
 par(mfrow = c(2, 2), mar = c(4, 4, 4, 2), mgp = c(2.5, 1, 0), cex.lab=1, cex.axis=1, cex.main=1, cex.sub=1)
+# first
 plot(df$Datetime, df$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power")
+# second
 plot(df$Datetime, df$Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
+# third
 plot(df$Datetime, df$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
 lines(df$Datetime, df$Sub_metering_2, col = "red")
 lines(df$Datetime, df$Sub_metering_3, col = "blue")
 legend("topright", col = c('black', 'blue', 'red'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), lwd=1, cex=1, bty = "n")
+# fourth
 plot(df$Datetime, df$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 dev.off()
 
