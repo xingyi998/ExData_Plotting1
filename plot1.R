@@ -55,3 +55,6 @@ png(filename = "plot1.png", width = 480, height = 480, bg="transparent")
 par(cex.lab=1, cex.axis=1, cex.main=1.1, cex.sub=1)
 hist(df$Global_active_power, breaks = 12, xlab = "Global Active Power (kiliwatts)", main = "Global Active Power", col = "red")
 dev.off()
+
+# remove the temporary directory
+unlink(tempDir, recursive = TRUE)

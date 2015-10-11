@@ -60,3 +60,6 @@ lines(df$Datetime, df$Sub_metering_3, col = "blue")
 legend("topright", col = c('black', 'blue', 'red'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), lwd=1, cex=1, bty = "n")
 plot(df$Datetime, df$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 dev.off()
+
+# remove the temporary directory
+unlink(tempDir, recursive = TRUE)

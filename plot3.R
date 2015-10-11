@@ -58,3 +58,6 @@ lines(df$Datetime, df$Sub_metering_2, col = "red")
 lines(df$Datetime, df$Sub_metering_3, col = "blue")
 legend("topright", col = c('black', 'blue', 'red'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), lwd=1, cex=1)
 dev.off()
+
+# remove the temporary directory
+unlink(tempDir, recursive = TRUE)
